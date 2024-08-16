@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test2',
@@ -8,9 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class Test2Component{
 
 
-  @Input() status: string;
+  @Input('status') statusTest: string = 'hola buen viernes working';
+  @Output ('onSetData') SendData = new EventEmitter(null);
 
-  constructor() { }
 
+  onClickTest(event: any){
+
+    console.log ('Event click:', event);
+//output personalizado puede enviar json etc
+    this.SendData.emit({
+        name: 'Fav',
+        status: 'Master'
+
+    });
+
+  }
 
 }

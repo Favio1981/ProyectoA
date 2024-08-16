@@ -1,7 +1,23 @@
-<p>estilo de appp</p>
+<p>App component padre</p>
 
 
-<app-test2></app-test2>
+<app-test2 
+status1="working!!"
+(onSetData)="printDataTest2($event)"
+[status]="[myStatus]"
+
+>
+
+
+</app-test2>
+
+<app-test3 name="Angular" lastName="Version V12"
+(onSendData)="printData($event)">
+</app-test3>
+
+<button onclick="">Boton de Inicio</button>
+
+<input type="checkbox">
 
 
 
